@@ -2,7 +2,7 @@
 % Please edit documentation in R/wgsHLAfiltR_functions.R
 \name{filterHLA}
 \alias{filterHLA}
-\title{Extract Classical HLA Reads From fastq.gz Files}
+\title{Main Function For Extracting Classical HLA Reads From fastq.gz Files}
 \usage{
 filterHLA(inputDirectory, outputDirectory = "Results")
 }
@@ -15,10 +15,10 @@ filterHLA(inputDirectory, outputDirectory = "Results")
 A list object describing all of the pre-and post-filtering reads for each subject.
 }
 \description{
-The primary function for extracting HLA reads in fastq.gz files. filterHLA() calls all of the wgsHLAfiltR package's secondary functions.
+This function and calls all of the wgsHLAfiltR package's secondary functions, extracting HLA reads from fastq.gz files.
 }
 \details{
-This function identifies whole-genome and whole-exome reads that map to the classical HLA loci (HLA-A, -C, -B, -DRB1, -DRB3/4/5, -DQA1, -DQB1, -DPA1, and DPB1) in fastq.gz files in a user-specified directory, and writes fastq.gz files containing only classical HLA-specific reads in a second output directory. Reads for the HLA genes are mapped using hg19 reference coordinates.
+This function identifies whole-genome and whole-exome reads that map to the classical HLA loci (HLA-A, -C, -B, -DRB1, -DRB3/4/5, -DQA1, -DQB1, -DPA1, and -DPB1) in fastq.gz files in a user-specified directory, and writes fastq.gz files containing only classical HLA-specific reads in a second output directory. Reads for the HLA genes are mapped using hg19 reference coordinates.
 }
 \note{
 This function requires that bowtie2 be installed in the local environment.

@@ -1,3 +1,10 @@
+Changes in version 0.3.0 (2021-02-09)
+  o 2021-02-09
+  o Properly bundled a class into the package.
+  o Modifications to documentation.
+  o NOTE: Exclude whitespaces from all filepaths and filenames. 
+          See: http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#sam-output
+
 Changes in version 0.2.0 (2021-01-13)
   o 2021-01-13
   o Minor changes to documentation.

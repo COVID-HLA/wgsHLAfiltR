@@ -1,10 +1,10 @@
-## Main wrapper for extracting reads -- 12/29/2020 SJM
+## Main wrapper for extracting reads -- v 1.2 02/09/2021 SJM
 
-#' Extract Classical HLA Reads From fastq.gz Files
+#' Main Function For Extracting Classical HLA Reads From fastq.gz Files
 #' 
-#' The primary function for extracting HLA reads in fastq.gz files. filterHLA() calls all of the wgsHLAfiltR package's secondary functions.
+#' This function and calls all of the wgsHLAfiltR package's secondary functions, extracting HLA reads from fastq.gz files.
 #' 
-#' This function identifies whole-genome and whole-exome reads that map to the classical HLA loci (HLA-A, -C, -B, -DRB1, -DRB3/4/5, -DQA1, -DQB1, -DPA1, and DPB1) in fastq.gz files in a user-specified directory, and writes fastq.gz files containing only classical HLA-specific reads in a second output directory. Reads for the HLA genes are mapped using hg19 reference coordinates.
+#' This function identifies whole-genome and whole-exome reads that map to the classical HLA loci (HLA-A, -C, -B, -DRB1, -DRB3/4/5, -DQA1, -DQB1, -DPA1, and -DPB1) in fastq.gz files in a user-specified directory, and writes fastq.gz files containing only classical HLA-specific reads in a second output directory. Reads for the HLA genes are mapped using hg19 reference coordinates.
 #' @param inputDirectory A path to the directory that contains the fastq.gz files to be filtered. This parameter is required. 
 #' @param outputDirectory A path to an existing directory where the HLA-specific fastq.gz files will be written. If no directory is specified, a 'Results' directory will be created in the working directory. If a 'Results' directory is already present in the working directory, output files will be written in that directory.
 #' @keywords filter HLA fastq reads
@@ -159,23 +159,6 @@ general.paired_sample_objects <- function(rawFastqDirectory,fastqPattern,results
   
   cat("\nFound", length(uniqueFastqList), "samples in", rawFastqDirectory)
   
-  ## Creating the sample object class
-  if(FALSE){seqSample <- setRefClass("seqSample",
-                        fields=list(name='character',
-                                    rawfastq1path='character',
-                                    rawfastq2path='character',
-                                    kirfastq1path='character',
-                                    kirfastq2path='character',
-                                    geneContent='list',
-                                    kffHits='list',
-                                    copyNumber='list',
-                                    failed='logical',
-                                    haploType='list',
-                                    filterType='list',
-                                    gzip='logical',
-                                    samPath='character',
-                                    bamPath='character'))}
-  
   ## Initializing a sample object list. This will be returned
   output.sampleList <- list()
   
@@ -313,3 +296,41 @@ extractor.run <- function(sampleList, threads, extractedFastqDirectory, forceRun
   
   return(sampleList)
 }
+
+## SeqSample Class
+
+#' Sequenced Samples Object Class
+#'
+#' An object class function required for the package.
+#' @field name A charactrer string describing the name of the fastq file
+#' @field rawfastq1path A charactrer string describing the path to the first unfiltered fastq
+#' @field rawfastq2path A charactrer string describing the path to the paired unfiltered fastq
+#' @field kirfastq1path A charactrer string; not used in this package
+#' @field kirfastq2path A charactrer string; not used in this package
+#' @field geneContent A list; not used in this package
+#' @field kffHits A list; not used in this package
+#' @field copyNumber A list; not used in this package
+#' @field failed A logical
+#' @field haploType A list; not used in this package
+#' @field filterType A list; not used in this package
+#' @field gzip A logical identifying wether the unfiltered fastq files are gzipped or not
+#' @field samPath A character string describing the path to the sam file for the extracted fastq
+#' @field bamPath A character string; not used in this package
+#' @import methods
+#' @export seqSample
+#' @exportClass seqSample
+seqSample <- setRefClass("seqSample",
+                         fields=list(name='character',
+                                     rawfastq1path='character',
+                                     rawfastq2path='character',
+                                     kirfastq1path='character',
+                                     kirfastq2path='character',
+                                     geneContent='list',
+                                     kffHits='list',
+                                     copyNumber='list',
+                                     failed='logical',
+                                     haploType='list',
+                                     filterType='list',
+                                     gzip='logical',
+                                     samPath='character',
+                                     bamPath='character'))
