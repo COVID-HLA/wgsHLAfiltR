@@ -30,7 +30,7 @@ While the package includes several functions, *filterHLA()* is the main function
 
     > readFilteringData <- filterHLA(inputDirectory=inputDir,outputDirectory=outputDir)
 
-A value for *inputDirectory* is required, but a value for *outputDirectory* is optional. If *outputDirectory* is not specified, HLA-only FASTQ files will be written into a directory named *Results* in the working directory. If the *Results* directory is not present in the working directory, one will be created.
+A value for *inputDirectory* is required, but a value for *outputDirectory* is optional. If *outputDirectory* is not specified, HLA-only FASTQ files will be written into a directory named "Results" in the R working directory. If the "Results" directory is not present in the R working directory, one will be created.
 
 Note that Bowtie 2 requires file path and file names that do not include whitespaces. See the [Bowtie 2 Manual](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#sam-output) for additional details.
 
