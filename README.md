@@ -2,7 +2,7 @@
 v0.3.0 (February 9, 2021)
 
 ***
-The *wgsHLAfilteR* R package extracts reads that map to classical HLA loci (HLA-A, -C, -B, -DRB1, -DRB3/4/5, -DQA1, -DQB1, -DPA1 and -DPB1) from paired or individual whole-genome or whole-exome sequencing (WGS/WES) fastg.gz files, and writes a new set of fastq.gz files that contain reads that map to the classical HLA loci. 
+The *wgsHLAfilteR* R package extracts reads that map to classical HLA loci (HLA-A, -C, -B, -DRB1, -DRB3/4/5, -DQA1, -DQB1, -DPA1 and -DPB1) from paired or individual whole-genome or whole-exome sequencing (WGS/WES) fastg.gz files, and writes a new set of fastq.gz files that contain reads that map to the classical HLA loci (using hg19 coordinates). 
 
 The package was developed for use with the [HLA|COVID-19 Database](https://database-hlacovid19.org)'s [Omixon CLI Explore Genotyping Portal](https://database-hlacovid19.org/shiny/Omixon-Genotyping-Portal/), with the aim of minimizing FASTQ upload time and read processing time.
 
@@ -30,7 +30,7 @@ While the package includes several functions, *filterHLA()* is the main function
 
     > readFilteringData <- filterHLA(inputDirectory=inputDir,outputDirectory=outputDir)
 
-A value for *inputDirectory* is required, but a value for *outputDirectory* is optional. If *outputDirectory* is not specified, HLA-only FASTQ files will be written into a directory named *Results* in the working directory.
+A value for *inputDirectory* is required, but a value for *outputDirectory* is optional. If *outputDirectory* is not specified, HLA-only FASTQ files will be written into a directory named *Results* in the working directory. If the *Results* directory is not present in the working directory, one will be created.
 
 Note that Bowtie 2 requires file path and file names that do not include whitespaces. See the [Bowtie 2 Manual](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#sam-output) for additional details.
 
