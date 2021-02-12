@@ -1,6 +1,6 @@
 Package: wgsHLAfiltR
 Title: Whole Genome Sequence HLA Filter
-Version: 0.3.0
+Version: 0.3.1
 Authors@R: c(person("Steven", "Mack", email = "steven.mack@ucsf.edu", role = c("aut", "cre")),
              person("Tasneem","Yusufali", email="tasneem.yusufali@ucsf.edu", role="aut"))
 Description: Extracts reads that map to the genomic coordinates of the classical Human Leukocyte Antigen (HLA) Loci (HLA-A, -C, -B, -DRB1, -DRB3/4/5, -DQA1, -DQB1, -DPA1 and -DPB1) from fastq.gz files, using hg19 coordinates, and writes, new HLA-reads-only, fastq.gz files. This package includes 132.3Mb of data required for read alignment, and requires bowtie2 installation in the local system.

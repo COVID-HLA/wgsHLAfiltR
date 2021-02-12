@@ -1,15 +1,15 @@
-## Main wrapper for extracting reads -- v 1.2 02/09/2021 SJM
+## Main wrapper for extracting reads -- v 1.2.1 02/11/2021 SJM
 
 #' Main Function For Extracting Classical HLA Reads From fastq.gz Files
 #' 
-#' This function and calls all of the wgsHLAfiltR package's secondary functions, extracting HLA reads from fastq.gz files.
+#' This function calls all of the wgsHLAfiltR package's secondary functions, applying them to extract HLA reads from fastq.gz files.
 #' 
 #' This function identifies whole-genome and whole-exome reads that map to the classical HLA loci (HLA-A, -C, -B, -DRB1, -DRB3/4/5, -DQA1, -DQB1, -DPA1, and -DPB1) in fastq.gz files in a user-specified directory, and writes fastq.gz files containing only classical HLA-specific reads in a second output directory. Reads for the HLA genes are mapped using hg19 reference coordinates.
 #' @param inputDirectory A path to the directory that contains the fastq.gz files to be filtered. This parameter is required. 
 #' @param outputDirectory A path to an existing directory where the HLA-specific fastq.gz files will be written. If no directory is specified, a 'Results' directory will be created in the working directory. If a 'Results' directory is already present in the working directory, output files will be written in that directory.
 #' @keywords filter HLA fastq reads
 #' @return A list object describing all of the pre-and post-filtering reads for each subject. 
-#' @note This function requires that bowtie2 be installed in the local environment. 
+#' @note This function requires that bowtie2 be installed in the local environment. This version only functions on unix/linux/macOS installations of R.
 #' @examples 
 #' # Filter non-HLA reads in fastq.gz files in a single directory
 #' # inputDir <- paste(getwd(),"unfilteredReads",sep="/")
@@ -73,17 +73,17 @@ check.system2_output <- function(system2_output, system2_error){
 
 #' General Paired Sample Objects
 #' 
-#' Finds pairs of fastq files inputDirectory for each subject, and returns a list of sample objects that contain the paired fastq file names
+#' Finds pairs of fastq files in inputDirectory for each subject, and returns a list of sample objects that contain the paired fastq file names.
 #' 
 #' For internal wgsHLAfiltR use.
 #' @param rawFastqDirectory The directory containing unfiltered fastq files.
 #' @param fastqPattern A sub-string of the fastq file names that identifies the fastq files to be filtered. A value of 'fastq' specifies all fastq files.
 #' @param resultsDirectory The directory into which the filtered fastq files should be written. 
 #' @param shortNameDelim A delimeter used to shorten fastq filenames.
-#' @return A list of sample objects that contain the paired fastq file names for each subject, identifying each fastq pair, the path to each paired file, and a logigical indicator of gzip status.
+#' @return A list of sample objects that contain the paired fastq file names for each subject, identifying each fastq pair, the path to each paired file, and a logical indicator of gzip status.
 #' @importFrom stringr str_split fixed
 #' @importFrom methods setRefClass
-#' @note This function is for interal use. 
+#' @note This function is for internal use. 
 #' @export
 
 general.paired_sample_objects <- function(rawFastqDirectory,fastqPattern,resultsDirectory,shortNameDelim){

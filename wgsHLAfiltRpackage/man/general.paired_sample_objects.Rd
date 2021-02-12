@@ -21,14 +21,14 @@ general.paired_sample_objects(
 \item{shortNameDelim}{A delimeter used to shorten fastq filenames.}
 }
 \value{
-A list of sample objects that contain the paired fastq file names for each subject, identifying each fastq pair, the path to each paired file, and a logigical indicator of gzip status.
+A list of sample objects that contain the paired fastq file names for each subject, identifying each fastq pair, the path to each paired file, and a logical indicator of gzip status.
 }
 \description{
-Finds pairs of fastq files inputDirectory for each subject, and returns a list of sample objects that contain the paired fastq file names
+Finds pairs of fastq files in inputDirectory for each subject, and returns a list of sample objects that contain the paired fastq file names.
 }
 \details{
 For internal wgsHLAfiltR use.
 }
 \note{
-This function is for interal use.
+This function is for internal use.
 }

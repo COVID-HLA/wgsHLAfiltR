@@ -1,3 +1,8 @@
+Changes in version 0.3.1 (2021-02-11)
+  o 2021-02-11
+  o Corrected typoes in function documentation
+  o Noted operating system limitation to unix/linux/macOS systems, and bowtie 2 version requirements.
+
 Changes in version 0.3.0 (2021-02-09)
   o 2021-02-09
   o Properly bundled a class into the package.
