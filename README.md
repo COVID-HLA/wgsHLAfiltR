@@ -2,7 +2,7 @@
 v0.3.1 (February 11, 2021)
 
 ***
-The *wgsHLAfiltR* R package extracts reads that map to classical HLA loci (HLA-A, -C, -B, -DRB1, -DRB3/4/5, -DQA1, -DQB1, -DPA1 and -DPB1) from paired or individual whole-genome or whole-exome sequencing (WGS/WES) fastg.gz files, and writes a new set of fastq.gz files that contain reads that map to the classical HLA loci (using hg19 coordinates). 
+The *wgsHLAfiltR* R package extracts reads that map to classical HLA loci (HLA-A, -C, -B, -DRB1, -DRB3/4/5, -DQA1, -DQB1, -DPA1 and -DPB1) from paired or individual whole-genome or whole-exome sequencing (WGS/WES) fastg.gz files, and writes a new set of fastq.gz files that contain reads that map to the classical HLA loci. 
 
 The package was developed for use with the [HLA|COVID-19 Database](https://database-hlacovid19.org)'s [Omixon CLI Explore Genotyping Portal](https://database-hlacovid19.org/shiny/Omixon-Genotyping-Portal/), with the aim of minimizing FASTQ upload time and read processing time.
 
