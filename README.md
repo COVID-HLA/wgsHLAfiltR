@@ -1,5 +1,5 @@
 # Whole Genome Sequence HLA Filter (wgsHLAfiltR)  
-v0.3.1 (February 11, 2021)
+v0.3.2 (March 23, 2021)
 
 ***
 The *wgsHLAfiltR* R package extracts reads that map to classical HLA loci (HLA-A, -C, -B, -DRB1, -DRB3/4/5, -DQA1, -DQB1, -DPA1 and -DPB1) from paired or individual whole-genome or whole-exome sequencing (WGS/WES) fastg.gz files, and writes a new set of fastq.gz files that contain reads that map to the classical HLA loci. 
@@ -8,7 +8,7 @@ The package was developed for use with the [HLA|COVID-19 Database](https://datab
 
 ***
 ### Package Requirements
-*wgsHLAfiltR* (version 0.3.1) currently functions only on Unix, Linux or MacOS systems. 
+Currently, *wgsHLAfiltR* (version 0.3.2) only functions on Unix, Linux and macOS systems. 
 
 *wgsHLAfiltR* requires [R v4.0.0 or higher](https://cran.r-project.org) to run. 
 

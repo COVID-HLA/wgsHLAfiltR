@@ -1,4 +1,4 @@
-## Main wrapper for extracting reads -- v 1.2.1 02/11/2021 SJM
+## Main wrapper for extracting reads -- v 1.3.0 03/22/2021 SJM
 
 #' Main Function For Extracting Classical HLA Reads From fastq.gz Files
 #' 
@@ -9,7 +9,7 @@
 #' @param outputDirectory A path to an existing directory where the HLA-specific fastq.gz files will be written. If no directory is specified, a 'Results' directory will be created in the working directory. If a 'Results' directory is already present in the working directory, output files will be written in that directory.
 #' @keywords filter HLA fastq reads
 #' @return A list object describing all of the pre-and post-filtering reads for each subject. 
-#' @note This function requires that bowtie2 be installed in the local environment. This version only functions on unix/linux/macOS installations of R.
+#' @note This function requires that bowtie2 be installed in the local environment. This version only functions on Unix, Linux, and macOS installations of R.
 #' @examples 
 #' # Filter non-HLA reads in fastq.gz files in a single directory
 #' # inputDir <- paste(getwd(),"unfilteredReads",sep="/")
@@ -18,8 +18,9 @@
 #' @export
 
 filterHLA <- function(inputDirectory,outputDirectory="Results"){
+  if(.Platform$OS.type == "windows") {return(cat("Currently, wgsHLAFiltR only functions on Unix, Linux, and macOS systems.\n\nSupport for Windows systems is pending.","\n"))}
   
-  if(missing(inputDirectory)) {return(cat("Please use the inputDirectory parameter to identify a directory that contains the fastq.gz files to be filtered.","\t"))}
+  if(missing(inputDirectory)) {return(cat("Please use the inputDirectory parameter to identify a directory that contains the fastq.gz files to be filtered.","\n"))}
   
   if(!dir.exists(outputDirectory)) {dir.create(outputDirectory,recursive = TRUE)}
   
