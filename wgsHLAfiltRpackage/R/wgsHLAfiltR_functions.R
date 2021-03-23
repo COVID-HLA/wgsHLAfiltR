@@ -1,4 +1,4 @@
-## Main wrapper for extracting reads -- v 1.2.1 02/11/2021 SJM
+## Main wrapper for extracting reads -- v 1.3.0 03/22/2021 SJM
 
 #' Main Function For Extracting Classical HLA Reads From fastq.gz Files
 #' 
@@ -18,8 +18,9 @@
 #' @export
 
 filterHLA <- function(inputDirectory,outputDirectory="Results"){
+  if(.Platform$OS.type == "windows") {return(cat("Currently, wgsHLAFiltR only functions on Unix, Linux, and macOS systems.\n\nSupport for Windows systems is pending.","\n"))}
   
-  if(missing(inputDirectory)) {return(cat("Please use the inputDirectory parameter to identify a directory that contains the fastq.gz files to be filtered.","\t"))}
+  if(missing(inputDirectory)) {return(cat("Please use the inputDirectory parameter to identify a directory that contains the fastq.gz files to be filtered.","\n"))}
   
   if(!dir.exists(outputDirectory)) {dir.create(outputDirectory,recursive = TRUE)}
   

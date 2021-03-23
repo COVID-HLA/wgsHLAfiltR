@@ -1,7 +1,11 @@
+Changes in version 0.3.2 (2021-03-22)
+  o 2021-03-22
+  o Windows users are notified that the package does not function on Windows systems.
+
 Changes in version 0.3.1 (2021-02-11)
   o 2021-02-11
   o Corrected typoes in function documentation
-  o Noted operating system limitation to unix/linux/macOS systems, and bowtie 2 version requirements.
+  o Noted operating system limitation to Unix, Linux, and macOS systems, and bowtie 2 version requirements.
 
 Changes in version 0.3.0 (2021-02-09)
   o 2021-02-09
