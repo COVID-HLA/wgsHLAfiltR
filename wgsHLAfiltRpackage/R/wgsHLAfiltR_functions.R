@@ -9,7 +9,7 @@
 #' @param outputDirectory A path to an existing directory where the HLA-specific fastq.gz files will be written. If no directory is specified, a 'Results' directory will be created in the working directory. If a 'Results' directory is already present in the working directory, output files will be written in that directory.
 #' @keywords filter HLA fastq reads
 #' @return A list object describing all of the pre-and post-filtering reads for each subject. 
-#' @note This function requires that bowtie2 be installed in the local environment. This version only functions on Unix, Linux, and macOS installations of R.
+#' @note This function requires that bowtie2 be installed in the local environment. FilterHLA() only functions on Unix, Linux, and macOS installations of R.
 #' @examples 
 #' # Filter non-HLA reads in fastq.gz files in a single directory
 #' # inputDir <- paste(getwd(),"unfilteredReads",sep="/")
